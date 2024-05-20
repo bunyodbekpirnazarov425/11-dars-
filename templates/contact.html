@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="fh5co-hero">
+    <div class="fh5co-overlay"></div>
+    <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(../static/images/tashkent1.jpg);">
+        <div class="desc animate-box">
+            <h2>Contact Us.</h2>
+            <span><a class="btn btn-primary btn-lg" href="{% url 'home_page' %}">Get Started</a></span>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="fh5co-contact" class="fh5co-section animate-box">
+    <div class="container">
+        <form action="#">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="section-title">Our Address</h3>
+                    <p>We are very pleased that you will travel with us. 
+                        Fill in the information about yourself. We are glad that you have used our service</p>
+                    <ul class="contact-info">
+                        <li><i class="icon-location-pin"></i>9QQQ+3GV, Kuvasay Street, Fergana, Fergana Region, Uzbekistan</li>
+                        <li><i class="icon-phone2"></i>+998-94-169-29-77</li>
+                        <li><i class="icon-instagram"></i><a href="https://www.instagram.com/_buny0d_o4/">_buny0d_o4</a></li>
+                        <li><i class="icon-globe2"></i><a href="https://najottalim.uz/">www.najottalim.uz</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <span><a class="btn btn-primary btn-lg" href="{% url 'home_page' %}">Send Message</a></span>
+                                {% comment %} <input type="submit" value="Send Message" class="btn btn-primary btn-lg"> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- END fh5co-contact -->
+<div id="map" class="fh5co-map"></div>
+<!-- END map -->
+
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% comment %} {% block about %}
+
+{% extends 'base.html' %} {% endcomment %}
+
+{% block content %}
+
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{counts.image.url}}" width="100%" height="100%" alt="..." /></div>
+            <div class="col-md-6">
+                <div class="small mb-1"></div>
+                <h2>{{counts.country}}</h2>
+                    <h5 style="color:white">${{counts.price}} / 10 kun</h5>
+                    <h5 style="color:white">Airline: {{counts.airline}}</h5>
+                    <h5 style="color:white">Batafsil ma'lumot: {{counts.text}}</h5>
+            <div>
+                <td><a href="{% url 'update_country' counts.id %}" class="btn btn-outline-info">Update</a></td>
+                <td><a href="{% url 'delete_country' counts.id %}" class="btn btn-outline-danger">Delete</a></td>
+                </td>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+
