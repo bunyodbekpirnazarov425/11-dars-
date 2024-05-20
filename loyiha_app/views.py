@@ -34,7 +34,7 @@ def update_country(request, id):
     count = CountryForm(instance=country)
     
     if request.method == 'POST':
-        count = CountryForm(request.POST, instance=country)
+        count = CountryForm(request.POST, request.FILES, instance=country)
         if count.is_valid():
             count.save()
             return redirect('home_page')
@@ -64,7 +64,7 @@ def contact(request):
 def airlines_list(request):
     airlines = Airline.objects.all()
     states = States.objects.all()
-    return render(request, 'airlines.html', {'airlines': airlines, 'states': states})
+    return render(request, 'airline.html', {'airlines': airlines, 'states': states})
 
 def airline_detail(request, id):
     airlines = Airline.objects.all()
