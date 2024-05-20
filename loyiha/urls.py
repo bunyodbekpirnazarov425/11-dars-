@@ -24,11 +24,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name="home_page"),
     path('contact/', contact, name="contact_page"),
-    path('batafsil/<int:id>/', batafsil, name="batafsil_page"),
-    path('create_country/', create_country, name="create_country"),
-     path('update_country/<int:id>', update_country, name="update_country"),
-    path('delete_country/<int:id>', delete_country, name="delete_country"),
     path('airlines/', airlines_list, name='airlines_list'),
+    path('create_country/', create_country, name="create_country"),
+    
+    path('batafsil/<int:id>/', batafsil, name="batafsil_page"),
+    path('update_country/<int:id>', update_country, name="update_country"),
+    path('delete_country/<int:id>', delete_country, name="delete_country"),
     path('airline/<int:id>/', airline_detail, name='airline_page'),
     path('states/<int:id>/', states_page, name='states_page'),
     

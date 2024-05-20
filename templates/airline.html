@@ -3,17 +3,21 @@
 {% block content %}
 
 <section class="py-5">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{airline.image.url}}" width="100%" height="100%" alt="..." /></div>
-            <div class="col-md-6">
-                <div class="small mb-1"></div>
-                <h2>{{airline.air_name}}</h2>
-                    <h5 style="color:white">Batafsil ma'lumot: {{airline.text}}</h5>
-            <div>
+    {% for counts in country %}
+            <div class="col-md-4 col-sm-4 fh5co-item-wrap">
+                <a class="fh5co-listing-item" href="{% url "batafsil_page" counts.id %}">
+                    <img src="{{counts.image.url}}" alt="Free HTML5 Bootstrap Template by FreeHTML5.co" class="img-responsive fh5co-img">
+                    <div class="fh5co-listing-copy">
+                        <h2>{{counts.country}}</h2>
+                        <h5 style="color:white">${{counts.price}}</h5>
+                        <h5 style="color:white">Airline: {{counts.airline}}</h5>
+                        <span class="icon">
+                            <i class="icon-chevron-right"></i>
+                        </span>
+                    </div>
+                </a>
             </div>
-        </div>
-    </div>
+            {% endfor %}
 </section>
 
 {% endblock content %}

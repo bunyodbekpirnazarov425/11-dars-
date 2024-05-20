@@ -51,15 +51,7 @@ def contact(request):
     airlines = Airline.objects.all()
     return render(request, template_name="contact.html", context={"states":states, "airlines":airlines})
 
-# def states(request):
-#     states = States.objects.all()
-#     airlines = Airline.objects.all()
-#     return render(request, template_name="home.html", context={"states":states, "airlines":airlines})
 
-# def airlines(request, id):
-#     airlines = Airline.objects.get(id=id)
-#     states = States.objects.all()
-#     return render(request, template_name="airline.html", context={"airlines":airlines, "states":states})
 
 def airlines_list(request):
     airlines = Airline.objects.all()
@@ -70,7 +62,8 @@ def airline_detail(request, id):
     airlines = Airline.objects.all()
     states = States.objects.all()
     airline = get_object_or_404(Airline, id=id)
-    return render(request, 'airline.html', {'airline': airline, 'airlines': airlines, 'states': states})
+    countrys = airline.country.all()
+    return render(request, 'airline.html', {'airline': airline, 'airlines': airlines, 'states': states, "country":countrys})
 
 def states_page(request, id):
     state = get_object_or_404(States, id=id)
